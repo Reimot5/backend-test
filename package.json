@@ -1,17 +1,17 @@
 {
   "name": "backend-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a backend-test for Enviame",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r dotenv/config server.js"
+    "start": "node -r dotenv/config src/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Reimot5/backend-test.git"
   },
-  "author": "",
+  "author": "Tomás Rubiño",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Reimot5/backend-test/issues"
