@@ -17,11 +17,12 @@ async function startDB() {
 		const connection = await pool.getConnection()
 		connection.changeUser({ database: 'backEndTest' })
 		connection.execute(`CREATE TABLE IF NOT EXISTS employees (
-			first_name varchar(50),
-			last_name varchar(50),
-			job_title varchar(100),
-			age int,
-			email varchar(50)
+			id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			first_name VARCHAR(50),
+			last_name VARCHAR(50),
+			job_title VARCHAR(100),
+			age INT,
+			email VARCHAR(50)
 		)`);
 		connection.release();
 		let result = await pool.execute('SELECT * FROM employees');

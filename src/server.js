@@ -9,14 +9,11 @@ const server = require("http").Server(app)
 const cors = require('cors')
 const helmet = require('helmet');
 
-const startDB = require("./db/mysqlclient").startDB;
+const { startDB } = require("./db/mysqlclient");
 
-require("./services/srvcTurnos")
-
-const turnos = require('./routes/turnos.js');
+const routeCrud = require('./routes/routerCrud.js');
 
 let corsOptions = {
-	// origin: `${env.targetUrl}`,
 	origin: "*",
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	preflightContinue: false,
@@ -31,7 +28,7 @@ app.use(urlencoded({ extended: true }));
 app.use(json());
 
 //ROUTER
-app.use(`/turnos`, turnos);
+app.use(`/crud`, routeCrud);
 
 app.get(`/`, async (req, res) => {
 	res.send("hola");
@@ -41,9 +38,4 @@ server.listen(PORT, async () => {
 	//Cargo datos fakes si no existen
 	await startDB()
 	console.log(`Server running on http://${env.host}:${PORT}/`)
-});
-
-app.use(({ status = 500, message = "", error = "" }, req, res, next) => {
-	console.error(`${status}: ${message || error}`);
-	res.status(status).send(message || error);
 });
