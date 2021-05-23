@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Reimot5/Notur.git"
+    "url": "git+https://github.com/Reimot5/backend-test.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Reimot5/Notur/issues"
+    "url": "https://github.com/Reimot5/backend-test/issues"
   },
-  "homepage": "https://github.com/Reimot5/Notur#readme",
+  "homepage": "https://github.com/Reimot5/backend-test#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
