@@ -39,6 +39,6 @@ app.get(`/`, async (req, res) => {
 
 server.listen(PORT, async () => {
 	//Cargo datos fakes si no existen
-	await startDB()
+	// await startDB()
 	console.log(`Server running on http://${env.host}:${PORT}/`)
 });
