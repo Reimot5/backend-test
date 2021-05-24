@@ -42,6 +42,7 @@ En esta coleccion encontraras todas las rutas de la api y divididas por Ejercici
 
 ## Construido con 🛠️
 
+* [Docker](https://www.docker.com/) - Docker es el motor sobre el cual se montan los contenedores
 * [Node.js](https://nodejs.org/es/) - Node.js es el entorno en tiempo de ejecución para Javascript usado
 * [Express.js](https://expressjs.com/es/) - Framework de aplicaciones web para Node.js usado
 * [MySql](https://www.mysql.com/) - Motor usado para la base de datos
