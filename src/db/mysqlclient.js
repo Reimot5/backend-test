@@ -1,10 +1,11 @@
 const mysql = require('mysql2/promise');
+const { env } = require('../config')
 var faker = require('faker');
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
+  host: env.host,
+  user: env.user,
+  password: env.password,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0

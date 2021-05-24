@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ENV PORT=3001
+# ENV PORT=3001
 
 EXPOSE 3001
 
