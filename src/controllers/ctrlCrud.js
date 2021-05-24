@@ -24,7 +24,6 @@ module.exports = (() => {
 						emailRegEx.test(email)
 					) {
 						let result = await createOneEmployee({ first_name, last_name, job_title, age, email })
-						console.log(result[0].affectedRows)
 						if (result[0].affectedRows > 0) {
 							resolve('Empleado creado correctamente')
 						} else {
