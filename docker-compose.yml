@@ -28,6 +28,7 @@ services:
       SERVER_NAME: Backend-Test
       PORT: 3001
       HOST: localhost
+      API_KEY: ea670047974b650bbcba5dd759baf1ed
       DB_HOST: db
       DB_USER: user
       DB_PASSWORD: password

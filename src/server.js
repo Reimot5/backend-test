@@ -15,6 +15,7 @@ const routerCrud = require('./routes/routerCrud.js');
 const routerPalindromo = require('./routes/routerPalindromo.js')
 const routerCrearEnvio = require('./routes/routerCrearEnvio.js')
 const routerFibonacci = require('./routes/routerFibonacci.js')
+const routerTiempoEntrega = require('./routes/routerTiempoEntrega.js')
 
 let corsOptions = {
 	origin: "*",
@@ -36,6 +37,7 @@ app.use(`/crud`, routerCrud);
 app.use(`/palindromo`, routerPalindromo);
 app.use(`/crear-envio`, routerCrearEnvio);
 app.use(`/fibonacci`, routerFibonacci);
+app.use(`/tiempo-entrega`, routerTiempoEntrega);
 
 app.get(`/`, async (req, res) => {
 	res.send(`Servidor ${SERVER_NAME} corriendo correctamente`);
