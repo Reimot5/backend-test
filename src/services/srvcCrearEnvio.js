@@ -21,10 +21,15 @@ module.exports = (() => {
                         },
                         data: requestApiEnviame
                     }
-                    let envio = await axios(options)
-                    console.log(envio.data)
-                    // let result = await pool.query('INSERT INTO envios SET ?', { first_name, last_name, job_title, age, email });
-                    resolve(envio);
+                    let envio = (await axios(options)).data
+                    envio = JSON.stringify(envio)
+                    let result = (await pool.query(`INSERT INTO envios (envio) VALUES (?)`, `${envio}`))[0]
+                    if (result.affectedRows >= 1) {
+                        resolve('Envio creado correctamente');
+                    } else {
+                        resolve('El envio no se pudo crear correctamente');
+                    }
+
                 } catch (error) {
                     console.log(error)
                     reject(error);

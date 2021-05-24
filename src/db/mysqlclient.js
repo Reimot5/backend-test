@@ -26,17 +26,23 @@ async function startDB() {
 			email VARCHAR(50)
 		);`);
 
+        //Ejercicio 4
+        connection.execute(`CREATE TABLE IF NOT EXISTS envios (
+			id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			envio json DEFAULT NULL
+		);`);
+
         //Ejercicio 7
-        connection.execute(`CREATE TABLE IF NOT EXISTS countries (
-            id int(10) unsigned NOT NULL AUTO_INCREMENT,
-            continent_id int(11) NOT NULL,
-            name varchar(25) NOT NULL,
-            PRIMARY KEY (id)
-        );`);
         connection.execute(`CREATE TABLE IF NOT EXISTS continents (
             id int(10) unsigned NOT NULL AUTO_INCREMENT,
             name varchar(25) NOT NULL,
             anual_adjustment int(11) NOT NULL,
+            PRIMARY KEY (id)
+        );`);
+        connection.execute(`CREATE TABLE IF NOT EXISTS countries (
+            id int(10) unsigned NOT NULL AUTO_INCREMENT,
+            continent_id int(11) NOT NULL,
+            name varchar(25) NOT NULL,
             PRIMARY KEY (id)
         );`);
         connection.execute(`CREATE TABLE IF NOT EXISTS employees (
