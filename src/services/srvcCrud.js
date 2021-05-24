@@ -8,7 +8,7 @@ module.exports = (() => {
 		getAllEmployees() {
 			return new Promise(async (resolve, reject) => {
 				try {
-					let result = await pool.execute('SELECT * FROM employees');
+					let result = await pool.execute('SELECT * FROM company_employees');
 					resolve(result);
 				} catch (error) {
 					console.log(error)
@@ -22,7 +22,7 @@ module.exports = (() => {
 		createOneEmployee({ first_name, last_name, job_title, age, email }) {
 			return new Promise(async (resolve, reject) => {
 				try {
-					let result = await pool.query('INSERT INTO employees SET ?', { first_name, last_name, job_title, age, email });
+					let result = await pool.query('INSERT INTO company_employees SET ?', { first_name, last_name, job_title, age, email });
 					resolve(result);
 				} catch (error) {
 					console.log(error)
@@ -36,7 +36,7 @@ module.exports = (() => {
 		updateOneEmployee({ id, parameters }) {
 			return new Promise(async (resolve, reject) => {
 				try {
-					let result = await pool.query('UPDATE employees SET ? WHERE ?', [parameters, { id }]);
+					let result = await pool.query('UPDATE company_employees SET ? WHERE ?', [parameters, { id }]);
 					resolve(result);
 				} catch (error) {
 					console.log(error)
@@ -50,7 +50,7 @@ module.exports = (() => {
 		deleteOneEmployee(id) {
 			return new Promise(async (resolve, reject) => {
 				try {
-					let result = await pool.query('DELETE FROM employees WHERE ?', { id });
+					let result = await pool.query('DELETE FROM company_employees WHERE ?', { id });
 					resolve(result);
 				} catch (error) {
 					console.log(error)

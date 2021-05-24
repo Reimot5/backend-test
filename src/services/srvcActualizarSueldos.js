@@ -5,10 +5,10 @@ module.exports = (() => {
 		/**
 		 * @returns {Promise<Array>}
 		 */
-		getAllEmployees() {
+        actualizarSueldosEmpleados() {
 			return new Promise(async (resolve, reject) => {
 				try {
-					let result = await pool.execute('SELECT * FROM employees');
+					let result = await pool.execute('SELECT * FROM company_employees');
 					resolve(result);
 				} catch (error) {
 					console.log(error)
