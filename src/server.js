@@ -14,6 +14,7 @@ const { startDB } = require("./db/mysqlclient");
 const routerCrud = require('./routes/routerCrud.js');
 const routerPalindromo = require('./routes/routerPalindromo.js')
 const routerCrearEnvio = require('./routes/routerCrearEnvio.js')
+const routerFibonacci = require('./routes/routerFibonacci.js')
 
 let corsOptions = {
 	origin: "*",
@@ -34,6 +35,7 @@ app.use(json());
 app.use(`/crud`, routerCrud);
 app.use(`/palindromo`, routerPalindromo);
 app.use(`/crear-envio`, routerCrearEnvio);
+app.use(`/fibonacci`, routerFibonacci);
 
 app.get(`/`, async (req, res) => {
 	res.send(`Servidor ${SERVER_NAME} corriendo correctamente`);
