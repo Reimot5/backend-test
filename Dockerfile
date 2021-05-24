@@ -1,14 +1,14 @@
-FROM nginx
+FROM node
 
-WORKDIR /
+WORKDIR /backend-test
 
-COPY package*.json ./
+COPY package*.json .
 
 RUN npm install
 
 COPY . .
 
-# ENV PORT=3001
+ENV PORT=3001
 
 EXPOSE 3001
 
