@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  db:
+    image: "mysql"
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: backEndTest
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  app:
+    container_name: app
+    depends_on:
+      - db
+    build: .
+    command: bash -c 'while !</dev/tcp/db/3306; do sleep 5; done; npm start'
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: production
+      SERVER_NAME: Backend-Test
+      PORT: 3001
+      HOST: localhost
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: password
+
+volumes:
+  db-data: {}

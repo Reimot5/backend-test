@@ -3,9 +3,9 @@ const { env } = require('../config')
 var faker = require('faker');
 
 const pool = mysql.createPool({
-  host: env.host,
-  user: env.user,
-  password: env.password,
+  host: env.dbHost,
+  user: env.dbUser,
+  password: env.dbPassword,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0

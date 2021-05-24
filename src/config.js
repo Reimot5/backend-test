@@ -4,6 +4,8 @@ module.exports.env = {
 	server_name: process.env.SERVER_NAME,
 	port: process.env.PORT,
 	host: process.env.HOST,
-	user: process.env.USER,
-	password: process.env.PASSWORD,
+	apiKey: process.env.API_KEY,
+    dbHost: process.env.DB_HOST,
+	dbUser: process.env.DB_USER,
+	dbPassword: process.env.DB_PASSWORD,
 };

@@ -8,9 +8,9 @@ RUN npm install
 
 COPY . .
 
-ENV PORT=3001
-
 EXPOSE 3001
 
-CMD [ "npm", "start" ]
+# CMD [ "npm", "start" ]
+
+CMD /wait-for-it.sh db:3306 -- npm start
 

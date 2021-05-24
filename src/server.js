@@ -8,14 +8,13 @@ const server = require("http").Server(app)
 const cors = require('cors')
 const helmet = require('helmet');
 const SERVER_NAME = env.server_name
-
-//Inicio base de datos con datos fake
-// const { startDB } = require("./db/mysqlclient");
+const { startDB } = require("./db/mysqlclient");
 
 //ROUTERS
-const routeCrud = require('./routes/routerCrud.js');
+const routerCrud = require('./routes/routerCrud.js');
+const routerPalindromo = require('./routes/routerPalindromo.js')
+const routerCrearEnvio = require('./routes/routerCrearEnvio.js')
 
-//MIDDLEWARES
 let corsOptions = {
 	origin: "*",
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -24,6 +23,7 @@ let corsOptions = {
 	optionsSuccessStatus: 200,
 };
 
+//MIDDLEWARES
 app.use(compression());
 app.use(helmet())
 app.use(cors(corsOptions))
@@ -31,7 +31,9 @@ app.use(urlencoded({ extended: true }));
 app.use(json());
 
 //ROUTES
-app.use(`/crud`, routeCrud);
+app.use(`/crud`, routerCrud);
+app.use(`/palindromo`, routerPalindromo);
+app.use(`/crear-envio`, routerCrearEnvio);
 
 app.get(`/`, async (req, res) => {
 	res.send(`Servidor ${SERVER_NAME} corriendo correctamente`);
@@ -39,6 +41,6 @@ app.get(`/`, async (req, res) => {
 
 server.listen(PORT, async () => {
 	//Cargo datos fakes si no existen
-	// await startDB()
+	await startDB()
 	console.log(`Server running on http://${env.host}:${PORT}/`)
 });

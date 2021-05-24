@@ -16,6 +16,9 @@ module.exports = (() => {
 				}
 			});
 		},
+        /**
+		 * @returns {Promise<any>}
+		 */
 		createOneEmployee({ first_name, last_name, job_title, age, email }) {
 			return new Promise(async (resolve, reject) => {
 				try {
@@ -27,6 +30,9 @@ module.exports = (() => {
 				}
 			});
 		},
+        /**
+		 * @returns {Promise<any>}
+		 */
 		updateOneEmployee({ id, parameters }) {
 			return new Promise(async (resolve, reject) => {
 				try {
@@ -38,6 +44,9 @@ module.exports = (() => {
 				}
 			});
 		},
+        /**
+		 * @returns {Promise<any>}
+		 */
 		deleteOneEmployee(id) {
 			return new Promise(async (resolve, reject) => {
 				try {
