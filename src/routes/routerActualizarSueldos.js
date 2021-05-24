@@ -1,9 +1,9 @@
 const router = require("express").Router()
-const { calcularTiempoEntrega } = require('../controllers/ctrlTiempoEntrega')
+const { actualizarSueldos } = require('../controllers/ctrlActualizarSueldos')
 
 router.get('/', async (req, res) => {
     try {
-        let result = calcularTiempoEntrega()
+        let result = actualizarSueldos()
         res.send(result)
     } catch (error) {
         res.status(500).send('error')
