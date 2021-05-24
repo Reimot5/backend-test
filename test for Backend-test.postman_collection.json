@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "988f2702-e76f-4c5a-9785-0d3e815e416c",
+		"name": "test for Backend-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ejercicio 2 - API REST + CRUD",
+			"item": [
+				{
+					"name": "Obtener todos los empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/crud/get-employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"crud",
+								"get-employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un empleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"first_name\": \"Lucas\", \r\n    \"last_name\": \"Fernandez\", \r\n    \"job_title\": \"CEO\", \r\n    \"age\": 30, \r\n    \"email\": \"lucas@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/crud/create-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"crud",
+								"create-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/crud/delete-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"crud",
+								"delete-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar un empleado",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"id\": 1,\r\n    \"first_name\": \"Lucas\", \r\n    \"last_name\": \"Fernandez\", \r\n    \"job_title\": \"CEO\", \r\n    \"age\": 30, \r\n    \"email\": \"lucas@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/crud/update-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"crud",
+								"update-employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ejercicio 3 - Palindromo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/palindromo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"palindromo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ejercicio 4 - API Enviame",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/crear-envio/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"crear-envio",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ejercicio 5 - Fibonacci",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/fibonacci",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"fibonacci"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ejercicio 6 - Tiempo de Entrega",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/tiempo-entrega",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tiempo-entrega"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ejercicio 7 - SQL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/actualizar-sueldos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"actualizar-sueldos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
