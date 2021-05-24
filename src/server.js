@@ -10,7 +10,7 @@ const helmet = require('helmet');
 const SERVER_NAME = env.server_name
 
 //Inicio base de datos con datos fake
-const { startDB } = require("./db/mysqlclient");
+// const { startDB } = require("./db/mysqlclient");
 
 //ROUTERS
 const routeCrud = require('./routes/routerCrud.js');
